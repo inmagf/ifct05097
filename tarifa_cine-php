@@ -1,0 +1,35 @@
+<?php 
+if($edad <=12) {
+	$resultado =" gratis"
+}
+	
+if($edad <=13 && $edad<=16) {
+ 		$resultado =" 4 €";
+}				
+					
+if($edad <=17 && $edad<=65) {
+	    $resultado =" 8 €";
+}				
+if($edad >65) {
+	    $resultado =" 4 €";	
+}		
+else {$resultado ="";}
+
+
+if(isset($_POST["borrar"])) { $edad = ""; }
+			
+?>
+
+<?php include '_header.php' ?>
+
+<div class="well">tarifa_cine</div>
+<form action="tarifa_cine.php" method="post">
+
+ EDAD: <input type="number" name="edad" value="<?php echo $edad; ?>"/><br><br>
+
+
+ <input type="submit" name="submit" value="pagar"/></br><br>
+ <input type="submit" name="borrar" value="borrar" />
+ </form>
+  				<h3><?php echo $resultado; ?></h3>
+  <?php include '_footer.php' ?>				
